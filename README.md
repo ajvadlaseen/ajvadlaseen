@@ -1,4 +1,5 @@
 
-<h3>Hi 👋, I'm Ajvad Laseen</h3>
-<p>An aspiring Web Developer 🌟</p>
+<h2>Hi , I'm Ajvad Laseen 👋</h2>
+<p>A Web Developer from Bangalore, India 👨‍💻</p>
+
 
