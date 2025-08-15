@@ -1,12 +1,19 @@
 ---
 import '../styles/globals.css'
 import Hero from '../components/Hero.tsx'
+import Content from '../components/Content.tsx'
 import Layout from '../layouts/Layout.astro'
+import { ModeToggle } from '@/components/ModeToggle'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+    <div class='fixed top-4 right-4 z-50'>
+        <ModeToggle client:load />
+    </div>
+
     <Hero />
+    <Content client:load />
 </Layout>
