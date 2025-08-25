@@ -1,8 +1,11 @@
 import { Briefcase, Building, IdCard, MapPin } from "lucide-react";
-import NathanDigitalExperience from "@/Content/NathanDigitalExperience.md?raw";
 import SamsotechExperience from "@/Content/SamsotechExperience.md?raw";
+import NathanDigitalExperience from "@/Content/NathanDigitalExperience.md?raw";
+import GitbitzExperience2 from "@/Content/GitbitzExperience2.md?raw";
+import ColtExperience from "@/Content/ColtExperience.md?raw";
+import GitbitzExperience1 from "@/Content/GitbitzExperience1.md?raw";
 import Markdown from "react-markdown";
-import remarkBreaks from 'remark-breaks';
+import remarkBreaks from "remark-breaks";
 
 type Props = {};
 
@@ -26,24 +29,21 @@ const ExperienceTimeline = (props: Props) => {
             <Experience
                 dates="Aug 2024 - Present"
                 headline="Software Developer"
-                description="Various versions have evolved over the years, sometimes by
-                    accident, sometimes on purpose injected humour and the like."
+                description={GitbitzExperience2}
                 organization="GITBITZ Software Private Limited"
                 location="Kozhikode, India"
             />
             <Experience
                 dates="Aug 2022 - Feb 2023"
                 headline="Trainee Engineer"
-                description="Various versions have evolved over the years, sometimes by
-                    accident, sometimes on purpose injected humour and the like."
+                description={ColtExperience}
                 organization="Colt Technology Services"
                 location="Bangalore, India"
             />
             <Experience
                 dates="Sep 2021 - Jun 2022"
                 headline="Junior Software Developer"
-                description="Various versions have evolved over the years, sometimes by
-                    accident, sometimes on purpose injected humour and the like."
+                description={GitbitzExperience1}
                 organization="GITBITZ Software Private Limited"
                 location="Kozhikode, India"
             />
@@ -58,6 +58,7 @@ type ExperienceProps = {
     description: string;
     location: string;
 };
+
 const Experience = (experienceProps: ExperienceProps) => {
     return (
         <div className="relative">
@@ -88,10 +89,56 @@ const Experience = (experienceProps: ExperienceProps) => {
                     </div>
                 </div>
             </div>
-            <div className="font-sans ml-14 rounded border border-slate-200 p-4 shadow md:ml-44 prose prose-sm">
-                <Markdown remarkPlugins={[remarkBreaks]}>{experienceProps.description}</Markdown>
+            <div className="ml-14 md:ml-44">
+                <div className="prose prose-sm max-w-none rounded border border-slate-200 p-4 font-sans shadow">
+                    <Markdown
+                        remarkPlugins={[remarkBreaks]}
+                        components={{
+                            p: ({ children }) => (
+                                <p className="mb-3 last:mb-0">{children}</p>
+                            ),
+                            ul: ({ children }) => (
+                                <ul className="mb-3 list-disc space-y-1 pl-6">
+                                    {children}
+                                </ul>
+                            ),
+                            ol: ({ children }) => (
+                                <ol className="mb-3 list-decimal space-y-1 pl-6">
+                                    {children}
+                                </ol>
+                            ),
+                            li: ({ children }) => (
+                                <li className="leading-relaxed">{children}</li>
+                            ),
+                            h1: ({ children }) => (
+                                <h1 className="mb-2 text-lg font-semibold">
+                                    {children}
+                                </h1>
+                            ),
+                            h2: ({ children }) => (
+                                <h2 className="mb-2 text-base font-semibold">
+                                    {children}
+                                </h2>
+                            ),
+                            h3: ({ children }) => (
+                                <h3 className="mb-2 text-sm font-semibold">
+                                    {children}
+                                </h3>
+                            ),
+                            strong: ({ children }) => (
+                                <strong className="font-semibold">
+                                    {children}
+                                </strong>
+                            ),
+                            br: () => <br className="block" />,
+                        }}
+                    >
+                        {experienceProps.description}
+                    </Markdown>
+                </div>
             </div>
         </div>
     );
 };
+
 export default ExperienceTimeline;
