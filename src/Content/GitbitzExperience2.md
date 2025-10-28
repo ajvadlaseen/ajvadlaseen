@@ -1,4 +1,4 @@
-- Built and maintained **backend API routes** for a Dubai-based **real estate property platform**
+- Built and maintained **backend API routes** for a Dubai-based **real estate platform**
     - Tech: **Node.js, TypeScript**
 
 - Assisted in developing an **admin panel frontend** with **React & Tailwind CSS**

@@ -1,4 +1,4 @@
-- Built a **restaurant booking platform** for a luxury UAE hotel chain
+- Built a **restaurant reservation platform** for a luxury hotel chain in the UAE
     - Integrated with **Oracle Opera** for real-time reservations
     - Stack: React, Tailwind, .NET Core, MSSQL, Azure Communication
 
