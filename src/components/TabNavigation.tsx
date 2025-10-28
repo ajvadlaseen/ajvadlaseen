@@ -4,8 +4,8 @@ export function TabNavigation({ currentPath }: { currentPath: string }) {
     const tabs = [
         { value: "/", label: "About" },
         { value: "/experience", label: "Experience" },
-        { value: "/projects", label: "Projects" },
         { value: "/skills", label: "Skills" },
+        { value: "/projects", label: "Projects" },
     ];
 
     return (
