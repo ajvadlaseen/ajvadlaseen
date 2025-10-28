@@ -1,53 +1,90 @@
 ---
+// experience.astro
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+} from '@/components/ui/card'
 import Layout from '@/layouts/Layout.astro'
-
-import ExperienceComponent from '@/components/Experience'
+import { marked } from 'marked'
 
 import SamsotechExperience from '@/Content/SamsotechExperience.md?raw'
 import NathanDigitalExperience from '@/Content/NathanDigitalExperience.md?raw'
 import GitbitzExperience2 from '@/Content/GitbitzExperience2.md?raw'
 import ColtExperience from '@/Content/ColtExperience.md?raw'
 import GitbitzExperience1 from '@/Content/GitbitzExperience1.md?raw'
+
+import IdCard from '@lucide/astro/icons/id-card'
+import Building from '@lucide/astro/icons/building'
+
+const experiences = [
+    {
+        dates: 'Aug 2024 - Present',
+        headline: 'Software Developer',
+        description: marked(SamsotechExperience),
+        organization: 'Samsotech International',
+        location: 'Dubai, U.A.E',
+    },
+    {
+        dates: 'Aug 2023 - Jul 2024',
+        headline: 'Backend Developer',
+        description: marked(NathanDigitalExperience),
+        organization: 'Nathan Digital',
+        location: 'Dubai, U.A.E',
+    },
+    {
+        dates: 'Aug 2024 - Present',
+        headline: 'Software Developer',
+        description: marked(GitbitzExperience2),
+        organization: 'GITBITZ Software Private Limited',
+        location: 'Kozhikode, India',
+    },
+    {
+        dates: 'Aug 2022 - Feb 2023',
+        headline: 'Trainee Engineer',
+        description: marked(ColtExperience),
+        organization: 'Colt Technology Services',
+        location: 'Bangalore, India',
+    },
+    {
+        dates: 'Sep 2021 - Jun 2022',
+        headline: 'Junior Software Developer',
+        description: marked(GitbitzExperience1),
+        organization: 'GITBITZ Software Private Limited',
+        location: 'Kozhikode, India',
+    },
+]
 ---
 
 <Layout>
-    <div
-        class='relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent md:before:ml-[8.75rem] md:before:translate-x-0'
-    >
-        <ExperienceComponent
-            dates='Aug 2024 - Present'
-            headline='Software Developer'
-            description={SamsotechExperience}
-            organization='Samsotech International'
-            location='Dubai, U.A.E'
-        />
-        <ExperienceComponent
-            dates='Aug 2023 - Jul 2024'
-            headline='Backend Developer'
-            description={NathanDigitalExperience}
-            organization='Nathan Digital'
-            location='Dubai, U.A.E'
-        />
-        <ExperienceComponent
-            dates='Aug 2024 - Present'
-            headline='Software Developer'
-            description={GitbitzExperience2}
-            organization='GITBITZ Software Private Limited'
-            location='Kozhikode, India'
-        />
-        <ExperienceComponent
-            dates='Aug 2022 - Feb 2023'
-            headline='Trainee Engineer'
-            description={ColtExperience}
-            organization='Colt Technology Services'
-            location='Bangalore, India'
-        />
-        <ExperienceComponent
-            dates='Sep 2021 - Jun 2022'
-            headline='Junior Software Developer'
-            description={GitbitzExperience1}
-            organization='GITBITZ Software Private Limited'
-            location='Kozhikode, India'
-        />
+    <div class='relative max-w-3xl mx-auto py-8 px-4 lg:px-0'>
+        {
+            experiences.map((exp, index) => (
+                <div class='relative pb-8'>
+                    <div class='relative flex items-start space-x-4'>
+                        <Card className='flex-1'>
+                            <CardHeader>
+                                <CardTitle className='flex items-center gap-2'>
+                                    <IdCard />
+                                    {exp.headline}
+                                </CardTitle>
+                                <CardDescription className='flex items-center gap-2'>
+                                    <Building />
+                                    {exp.organization} • {exp.dates}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div
+                                    class='prose prose-sm dark:prose-invert max-w-none'
+                                    set:html={exp.description}
+                                />
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            ))
+        }
     </div>
 </Layout>
