@@ -1,3 +1,12 @@
+---
+import '../styles/globals.css'
+import Hero from '@/components/Hero.astro'
+import { ModeToggle } from '@/components/ModeToggle'
+import { TabNavigation } from '@/components/TabNavigation'
+import { Particles } from '@/components/ui/particles'
+import { ClientRouter } from 'astro:transitions'
+---
+
 <!doctype html>
 <html lang='en'>
     <head>
@@ -5,10 +14,22 @@
         <meta name='viewport' content='width=device-width' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
-        <title>Astro Basics</title>
+        <title>Ajvad Laseen - Software Developer</title>
+
+        <ClientRouter />
     </head>
     <body class='bg-secondary-background max-h-dvh'>
-        <slot />
+        <!-- Shared Components across all pages -->
+        <div class='fixed top-4 right-4 z-50'>
+            <ModeToggle client:load />
+        </div>
+        <Hero />
+
+        <TabNavigation client:load currentPath={Astro.url.pathname} />
+
+        <div class='mx-auto flex max-w-3xl my-2'>
+            <slot />
+        </div>
     </body>
 </html>
 

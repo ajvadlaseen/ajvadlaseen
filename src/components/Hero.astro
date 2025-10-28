@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets'
+import profileImage from '../assets/headshot.jpg'
+
+type Props = {}
+const {} = Astro.props
+---
+
+<section
+    class='mx-auto my-16 flex max-w-3xl flex-col-reverse items-center gap-8 px-8 md:flex-row md:gap-16'
+>
+    {/* Text Section */}
+    <div
+        class='flex flex-col items-center text-center md:w-3/5 md:items-start md:text-left'
+    >
+        <h1 class='mb-4 text-4xl font-bold md:text-6xl'>Hi, I'm Ajvad</h1>
+        <h2 class='text-foreground text-xl leading-relaxed md:text-3xl'>
+            A Software Developer <br />
+            based in U.A.E
+        </h2>
+    </div>
+
+    {/* Image Section */}
+    <div class='flex w-2/5 justify-center md:justify-end'>
+        <div
+            class='h-64 w-64 overflow-hidden rounded-full border-4 border-foreground shadow-lg transition-transform duration-300 hover:scale-105'
+        >
+            <Image
+                src={profileImage}
+                alt='My Photo'
+                class='h-full w-full object-cover'
+            />
+        </div>
+    </div>
+</section>

@@ -1,55 +1,6 @@
 import { Briefcase, Building, IdCard, MapPin } from "lucide-react";
-import SamsotechExperience from "@/Content/SamsotechExperience.md?raw";
-import NathanDigitalExperience from "@/Content/NathanDigitalExperience.md?raw";
-import GitbitzExperience2 from "@/Content/GitbitzExperience2.md?raw";
-import ColtExperience from "@/Content/ColtExperience.md?raw";
-import GitbitzExperience1 from "@/Content/GitbitzExperience1.md?raw";
 import Markdown from "react-markdown";
 import remarkBreaks from "remark-breaks";
-
-type Props = {};
-
-const ExperienceTimeline = (props: Props) => {
-    return (
-        <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent md:before:ml-[8.75rem] md:before:translate-x-0">
-            <Experience
-                dates="Aug 2024 - Present"
-                headline="Software Developer"
-                description={SamsotechExperience}
-                organization="Samsotech International"
-                location="Dubai, U.A.E"
-            />
-            <Experience
-                dates="Aug 2023 - Jul 2024"
-                headline="Backend Developer"
-                description={NathanDigitalExperience}
-                organization="Nathan Digital"
-                location="Dubai, U.A.E"
-            />
-            <Experience
-                dates="Aug 2024 - Present"
-                headline="Software Developer"
-                description={GitbitzExperience2}
-                organization="GITBITZ Software Private Limited"
-                location="Kozhikode, India"
-            />
-            <Experience
-                dates="Aug 2022 - Feb 2023"
-                headline="Trainee Engineer"
-                description={ColtExperience}
-                organization="Colt Technology Services"
-                location="Bangalore, India"
-            />
-            <Experience
-                dates="Sep 2021 - Jun 2022"
-                headline="Junior Software Developer"
-                description={GitbitzExperience1}
-                organization="GITBITZ Software Private Limited"
-                location="Kozhikode, India"
-            />
-        </div>
-    );
-};
 
 type ExperienceProps = {
     dates: string;
@@ -141,4 +92,4 @@ const Experience = (experienceProps: ExperienceProps) => {
     );
 };
 
-export default ExperienceTimeline;
+export default Experience;
