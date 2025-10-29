@@ -19,7 +19,18 @@ import { ClientRouter } from 'astro:transitions'
 
         <ClientRouter />
     </head>
-    <body class='bg-secondary-background max-h-dvh'>
+    <body class='relative bg-secondary-background max-h-dvh overflow-x-hidden'>
+        <div class='fixed inset-0 -z-10 pointer-events-none'>
+            <Particles
+                className='absolute inset-0'
+                quantity={500}
+                ease={80}
+                color='#888'
+                refresh
+                client:visible
+            />
+        </div>
+
         <!-- Shared Components across all pages -->
         <DateTime />
         <div class='fixed top-4 right-4 z-50'>
