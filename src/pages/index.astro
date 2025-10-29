@@ -1,14 +1,17 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import '../styles/globals.css'
-import About from './about.astro'
-import { Code } from '@lucide/astro'
+
+import ReactLogo from '@/assets/react.svg'
+import TSLogo from '@/assets/typescript.svg'
+import NodeLogo from '@/assets/node-js.svg'
 ---
 
 <!-- <About /> -->
 <Layout>
     <div
-        class='space-y-8 rounded border border-slate-200 bg-secondary-background p-6 shadow my-6'
+        class='space-y-8 rounded-2xl border border-slate-200 bg-secondary-background p-6 shadow my-6'
     >
         {/* Intro */}
         <div class='space-y-3'>
@@ -25,15 +28,15 @@ import { Code } from '@lucide/astro'
             </p>
             <ul class='mt-3 space-y-2'>
                 <li class='flex items-center gap-2'>
-                    <!-- <Code class='h-5 w-5 text-sky-600' />{' '} -->
+                    <Image class='h-5 w-5' src={ReactLogo} alt='React' />
                     <strong>React</strong>
                 </li>
                 <li class='flex items-center gap-2'>
-                    <!-- <Code class='h-5 w-5 text-indigo-600' />{' '} -->
+                    <Image class='h-5 w-5' src={TSLogo} alt='React' />
                     <strong>TypeScript</strong>
                 </li>
                 <li class='flex items-center gap-2'>
-                    <!-- <Code class='h-5 w-5 text-green-600' />{' '} -->
+                    <Image class='h-5 w-5' src={NodeLogo} alt='React' />
                     <strong>Node.js</strong>
                 </li>
             </ul>
