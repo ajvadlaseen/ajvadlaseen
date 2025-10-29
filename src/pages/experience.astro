@@ -64,16 +64,24 @@ const experiences = [
             experiences.map((exp, index) => (
                 <div class='relative pb-8'>
                     <div class='relative flex items-start space-x-4'>
-                        <Card className='flex-1'>
-                            <CardHeader>
-                                <CardTitle className='flex items-center gap-2'>
-                                    <IdCard />
-                                    {exp.headline}
-                                </CardTitle>
-                                <CardDescription className='flex items-center gap-2'>
-                                    <Building />
-                                    {exp.organization} • {exp.dates}
-                                </CardDescription>
+                        <Card className='flex-1 bg-secondary-background'>
+                            <CardHeader className='flex justify-between items-start'>
+                                <div>
+                                    <CardTitle className='flex items-center gap-2'>
+                                        <IdCard />
+                                        {exp.headline}
+                                    </CardTitle>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        <Building />
+                                        {exp.organization} • {exp.location}
+                                    </CardDescription>
+                                </div>
+
+                                <div>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        {exp.dates}
+                                    </CardDescription>
+                                </div>
                             </CardHeader>
                             <CardContent>
                                 <div
