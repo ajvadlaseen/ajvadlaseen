@@ -9,16 +9,14 @@ export function TabNavigation({ currentPath }: { currentPath: string }) {
     ];
 
     return (
-        <div className="mx-auto flex max-w-[95%] md:max-w-3xl">
-            <Tabs value={currentPath} className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
-                    {tabs.map((tab) => (
-                        <TabsTrigger key={tab.value} value={tab.value} asChild>
-                            <a href={tab.value}>{tab.label}</a>
-                        </TabsTrigger>
-                    ))}
-                </TabsList>
-            </Tabs>
-        </div>
+        <Tabs value={currentPath} className="w-full">
+            <TabsList className="grid w-full grid-cols-4">
+                {tabs.map((tab) => (
+                    <TabsTrigger key={tab.value} value={tab.value} asChild>
+                        <a href={tab.value}>{tab.label}</a>
+                    </TabsTrigger>
+                ))}
+            </TabsList>
+        </Tabs>
     );
 }
