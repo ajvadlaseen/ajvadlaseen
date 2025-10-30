@@ -3,9 +3,9 @@ import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import '../styles/globals.css'
 
-import ReactLogo from '@/assets/react.svg'
-import TSLogo from '@/assets/typescript.svg'
-import NodeLogo from '@/assets/node-js.svg'
+import ReactLogo from '@/assets/logos/react.svg'
+import TSLogo from '@/assets/logos/typescript.svg'
+import NodeLogo from '@/assets/logos/node-js.svg'
 ---
 
 <!-- <About /> -->
@@ -28,15 +28,15 @@ import NodeLogo from '@/assets/node-js.svg'
             </p>
             <ul class='mt-3 space-y-2'>
                 <li class='flex items-center gap-2'>
-                    <Image class='h-5 w-5' src={ReactLogo} alt='React' />
+                    <Image class='w-5' src={ReactLogo} alt='React' />
                     <strong>React</strong>
                 </li>
                 <li class='flex items-center gap-2'>
-                    <Image class='h-5 w-5' src={TSLogo} alt='React' />
+                    <Image class='w-5' src={TSLogo} alt='React' />
                     <strong>TypeScript</strong>
                 </li>
                 <li class='flex items-center gap-2'>
-                    <Image class='h-5 w-5' src={NodeLogo} alt='React' />
+                    <Image class='w-5' src={NodeLogo} alt='React' />
                     <strong>Node.js</strong>
                 </li>
             </ul>
