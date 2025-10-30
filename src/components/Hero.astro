@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import profileImage from '../assets/headshot.jpg'
+import SocialsBox from './SocialsBox.astro'
 
 type Props = {}
 const {} = Astro.props
@@ -9,15 +10,20 @@ const {} = Astro.props
 <section
     class='mx-auto my-10 flex max-w-3xl flex-col-reverse items-center gap-8 px-8 md:flex-row md:gap-16'
 >
-    {/* Text Section */}
+    {/* Text & Socials */}
     <div
-        class='flex flex-col items-center text-center md:w-3/5 md:items-start md:text-left'
+        class='flex flex-col justify-between h-full md:h-[14rem] md:w-3/5 md:items-start md:text-left text-center items-center gap-4'
     >
-        <h1 class='mb-4 text-4xl font-bold md:text-5xl'>Hi, I'm Ajvad</h1>
-        <h2 class='text-foreground text-xl leading-relaxed md:text-2xl'>
-            A Software Developer <br />
-            based in U.A.E
-        </h2>
+        {/* Text Section */}
+        <div>
+            <h1 class='mb-4 text-4xl font-bold md:text-5xl'>Hi, I'm Ajvad</h1>
+            <h2 class='text-foreground text-xl leading-relaxed md:text-2xl'>
+                A Software Developer <br />
+                based in U.A.E
+            </h2>
+        </div>
+
+        <SocialsBox />
     </div>
 
     {/* Image Section */}
