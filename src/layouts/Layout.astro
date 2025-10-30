@@ -16,6 +16,10 @@ import { ClientRouter } from 'astro:transitions'
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
         <title>Ajvad Laseen - Software Developer</title>
+        <meta
+            name='description'
+            content='Portfolio of Ajvad Laseen — Software Developer'
+        />
 
         <ClientRouter />
     </head>
@@ -25,6 +29,8 @@ import { ClientRouter } from 'astro:transitions'
                 className='absolute inset-0'
                 quantity={500}
                 ease={80}
+                staticity={40}
+                size={0.5}
                 color='#888'
                 refresh
                 client:visible
