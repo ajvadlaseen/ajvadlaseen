@@ -3,7 +3,7 @@
     - Stack: React, Tailwind, .NET Core, MSSQL, Azure Communication
 
 - Delivered a **multi-outlet ordering system** for a leading Middle Eastern hotel
-    - POS integration (**Simphony & Infrasys**) with automated menu sync & receipts
+    - POS integration with automated menu sync & receipts
     - Stack: React, Chakra UI, .NET Core, MSSQL, SMTP
 
 - Developed a package tracking system for hotel F&B staff to efficiently monitor and manage guest consumption.
