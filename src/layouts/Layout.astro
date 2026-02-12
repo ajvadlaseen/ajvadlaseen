@@ -6,6 +6,7 @@ import { ModeToggle } from '@/components/ModeToggle'
 import { TabNavigation } from '@/components/TabNavigation'
 import { Particles } from '@/components/ui/particles'
 import { ClientRouter } from 'astro:transitions'
+import Footer from '@/components/Footer.astro'
 ---
 
 <!doctype html>
@@ -91,6 +92,8 @@ import { ClientRouter } from 'astro:transitions'
         <div class='mx-auto flex max-w-[95%] md:max-w-3xl my-2'>
             <slot />
         </div>
+
+        <Footer />
     </body>
 </html>
 
