@@ -1,8 +1,8 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
-import react from '@astrojs/react'
+import react from '@astrojs/react';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -14,4 +14,5 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
     integrations: [react(), sitemap(), icon()],
-})
+    trailingSlash: 'never',
+});
