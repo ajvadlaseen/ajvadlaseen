@@ -1,4 +1,4 @@
-## Hi , I'm Ajvad Laseen 👋
+## Hi, I'm Ajvad Laseen 👋
 
 I like to build stuff for the Web 🧑‍💻
 
