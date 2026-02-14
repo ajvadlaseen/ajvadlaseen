@@ -1,11 +1,11 @@
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export function TabNavigation({ currentPath }: { currentPath: string }) {
     const tabs = [
-        { value: "/", label: "About" },
-        { value: "/experience", label: "Experience" },
-        { value: "/skills", label: "Skills" },
-        { value: "/projects", label: "Projects" },
+        { value: '/', label: 'About' },
+        { value: '/experience', label: 'Experience' },
+        { value: '/skills', label: 'Skills' },
+        { value: '/projects', label: 'Projects' },
     ];
 
     return (
