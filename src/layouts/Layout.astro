@@ -64,7 +64,9 @@ import Footer from '@/components/Footer.astro'
             document.addEventListener('astro:after-swap', applyTheme)
         </script>
     </head>
-    <body class='relative bg-secondary-background max-h-dvh overflow-x-hidden'>
+    <body
+        class='relative bg-secondary-background min-h-dvh overflow-x-hidden flex flex-col'
+    >
         <div class='fixed inset-0 -z-10 pointer-events-none'>
             <Particles
                 className='absolute inset-0'
@@ -85,11 +87,11 @@ import Footer from '@/components/Footer.astro'
         </div>
         <Hero />
 
-        <div class='mx-auto flex max-w-[95%] md:max-w-3xl'>
+        <div class='mx-auto w-[95%] md:max-w-3xl'>
             <TabNavigation client:load currentPath={Astro.url.pathname} />
         </div>
 
-        <div class='mx-auto flex max-w-[95%] md:max-w-3xl my-2'>
+        <div class='mx-auto flex-grow flex max-w-[95%] md:max-w-3xl my-2'>
             <slot />
         </div>
 
