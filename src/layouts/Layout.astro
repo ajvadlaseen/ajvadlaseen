@@ -30,6 +30,22 @@ const fullTitle =
         : `${title} | Ajvad Laseen`
 
 const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
+
+// Structured Data
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Ajvad Laseen',
+    jobTitle: 'Software Developer',
+    url: Astro.site?.href,
+    sameAs: [
+        'https://linkedin.com/in/ajvadlaseen',
+        'https://instagram.com/ajvadlaseen',
+        'https://github.com/ajvadlaseen',
+    ],
+    image: ogImageUrl,
+    description: description,
+}
 ---
 
 <!doctype html>
@@ -69,6 +85,9 @@ const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
         <meta property='og:title' content={fullTitle} />
         <meta property='og:description' content={description} />
         <meta property='og:image' content={ogImageUrl} />
+
+        <!-- Structured Data -->
+        <script type='application/ld+json' set:html={JSON.stringify(jsonLd)} />
 
         <ClientRouter />
 
