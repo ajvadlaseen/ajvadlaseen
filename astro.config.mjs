@@ -11,7 +11,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
     site: import.meta.env.PROD
-        ? 'http://192.52.168.117:4321' // Production URL (Temporary)
+        ? 'https://ajvadlaseen.com' // Production URL
         : 'http://localhost:4321',
 
     vite: {
