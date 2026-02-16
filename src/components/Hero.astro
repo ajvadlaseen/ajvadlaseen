@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets'
+import profileImage from '../assets/ajvadlaseen.jpeg'
+import SocialsBox from './SocialsBox.astro'
+
+type Props = {}
+const {} = Astro.props
+---
+
+<section
+    class='mx-auto my-10 flex max-w-3xl flex-col-reverse items-center gap-8 px-8 md:flex-row md:gap-16'
+>
+    {/* Text & Socials */}
+    <div
+        class='flex flex-col justify-between h-full md:h-56 md:w-3/5 md:items-start md:text-left text-center items-center gap-4'
+    >
+        {/* Text Section */}
+        <div>
+            <h1 class='mb-4 text-4xl font-bold md:text-5xl'>Hi, I'm Ajvad</h1>
+            <h2 class='text-foreground text-xl leading-relaxed md:text-2xl'>
+                A Software Developer <br />
+                based in U.A.E
+            </h2>
+        </div>
+
+        <SocialsBox />
+    </div>
+
+    {/* Image Section */}
+    <div class='flex w-2/5 items-center justify-center md:justify-end'>
+        <div
+            class='aspect-square w-40 sm:w-52 md:w-56 overflow-hidden rounded-full border-4 border-foreground shadow-lg transition-transform duration-300 hover:scale-105'
+        >
+            <Image
+                src={profileImage}
+                alt='Ajvad Laseen'
+                class='h-full w-full object-cover'
+                loading={'eager'}
+            />
+        </div>
+    </div>
+</section>

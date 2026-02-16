@@ -1,0 +1,101 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { motion } from 'framer-motion'
+import { Card, CardContent } from '@/components/ui/card'
+
+import typescriptLogo from '@/assets/logos/typescript.svg'
+import reactLogo from '@/assets/logos/react.svg'
+import reactDarkLogo from '@/assets/logos/react-dark.svg'
+import nodeLogo from '@/assets/logos/node-js.svg'
+import astroLight from '@/assets/logos/astro-light.svg'
+import astroDark from '@/assets/logos/astro-dark.svg'
+import dotnetLogo from '@/assets/logos/dotnetcore.svg'
+import mongoLogo from '@/assets/logos/mongodb.svg'
+import sqlLogo from '@/assets/logos/sql.svg'
+import tailwindLogo from '@/assets/logos/tailwindcss.svg'
+
+import gitLogo from '@/assets/logos/git.svg'
+import githubLogo from '@/assets/logos/github.svg'
+import githubDarkLogo from '@/assets/logos/github-dark.svg'
+import bitbucketLogo from '@/assets/logos/bitbucket.svg'
+import postmanLogo from '@/assets/logos/postman.svg'
+import vscodeLogo from '@/assets/logos/vs-code.svg'
+import jiraLogo from '@/assets/logos/jira.svg'
+
+const coreTechnologies = [
+    { name: 'TypeScript', logo: typescriptLogo },
+    { name: 'React', logo: reactLogo, dark: reactDarkLogo },
+    { name: 'Node.js', logo: nodeLogo },
+    { name: 'Astro', logo: astroLight, dark: astroDark },
+    { name: '.NET Core', logo: dotnetLogo },
+    { name: 'Tailwind CSS', logo: tailwindLogo },
+    { name: 'MongoDB', logo: mongoLogo },
+    { name: 'SQL', logo: sqlLogo },
+]
+
+const developmentTools = [
+    { name: 'Git', logo: gitLogo },
+    { name: 'GitHub', logo: githubLogo, dark: githubDarkLogo },
+    { name: 'BitBucket', logo: bitbucketLogo },
+    { name: 'Postman', logo: postmanLogo },
+    { name: 'VS Code', logo: vscodeLogo },
+    { name: 'Jira', logo: jiraLogo },
+]
+---
+
+<Layout
+    title='Skills'
+    description='A showcase of Ajvad Laseen’s core skills, technologies, and development tools'
+>
+    <section class='py-8 px-4 lg:px-0 space-y-6 overflow-auto'>
+        <!-- Core Technologies -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Core Technologies</h2>
+            <div class='h-1 w-48 bg-main mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    coreTechnologies.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background  transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Developer Tools -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Development Tools</h2>
+            <div class='h-1 w-36 bg-chart-4 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    developmentTools.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background  transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

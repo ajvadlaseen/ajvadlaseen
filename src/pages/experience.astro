@@ -1,0 +1,104 @@
+---
+// experience.astro
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+} from '@/components/ui/card'
+import Layout from '@/layouts/Layout.astro'
+import { marked } from 'marked'
+
+import SamsotechExperience from '@/Content/SamsotechExperience.md?raw'
+import NathanDigitalExperience from '@/Content/NathanDigitalExperience.md?raw'
+import GitbitzExperience2 from '@/Content/GitbitzExperience2.md?raw'
+import ColtExperience from '@/Content/ColtExperience.md?raw'
+import GitbitzExperience1 from '@/Content/GitbitzExperience1.md?raw'
+
+import IdCard from '@lucide/astro/icons/id-card'
+import Building from '@lucide/astro/icons/building'
+import History from '@lucide/astro/icons/history'
+import { AvatarCircles } from '@/components/ui/avatar-circles'
+
+const experiences = [
+    {
+        dates: 'Aug 2024 - Present',
+        headline: 'Software Developer',
+        description: marked(SamsotechExperience),
+        organization: 'Samsotech International',
+        location: 'Dubai, U.A.E',
+    },
+    {
+        dates: 'Aug 2023 - Jul 2024',
+        headline: 'Backend Developer',
+        description: marked(NathanDigitalExperience),
+        organization: 'Nathan Digital',
+        location: 'Dubai, U.A.E',
+    },
+    {
+        dates: 'Mar 2023 - Jul 2023',
+        headline: 'Software Developer',
+        description: marked(GitbitzExperience2),
+        organization: 'GITBITZ Software Private Limited',
+        location: 'Kozhikode, India',
+    },
+    {
+        dates: 'Aug 2022 - Feb 2023',
+        headline: 'Trainee Engineer',
+        description: marked(ColtExperience),
+        organization: 'Colt Technology Services',
+        location: 'Bangalore, India',
+    },
+    {
+        dates: 'Sep 2021 - Jun 2022',
+        headline: 'Junior Software Developer',
+        description: marked(GitbitzExperience1),
+        organization: 'GITBITZ Software Private Limited',
+        location: 'Kozhikode, India',
+    },
+]
+---
+
+<Layout
+    title='Experience'
+    description='A detailed overview of Ajvad Laseen’s professional experience, highlighting roles, responsibilities, and impact across multiple organizations'
+>
+    <div class='relative max-w-3xl mx-auto py-8 px-4 lg:px-0'>
+        {
+            experiences.map((exp, index) => (
+                <div class='relative pb-8'>
+                    <div class='relative flex items-start space-x-4'>
+                        <Card className='flex-1 bg-secondary-background'>
+                            <CardHeader className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1'>
+                                <div class='space-y-1'>
+                                    <CardTitle className='flex items-center gap-2'>
+                                        <IdCard size={20} />
+                                        {exp.headline}
+                                    </CardTitle>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        <Building size={18} />
+                                        {exp.organization} • {exp.location}
+                                    </CardDescription>
+                                </div>
+
+                                <div>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        <History size={20} />
+                                        {exp.dates}
+                                    </CardDescription>
+                                </div>
+                            </CardHeader>
+                            <CardContent>
+                                <div
+                                    class='prose prose-sm dark:prose-invert max-w-none'
+                                    set:html={exp.description}
+                                />
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Layout>
