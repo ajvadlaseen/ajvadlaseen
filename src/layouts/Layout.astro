@@ -7,6 +7,29 @@ import { TabNavigation } from '@/components/TabNavigation'
 import { Particles } from '@/components/ui/particles'
 import { ClientRouter } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
+
+interface Props {
+    title?: string
+    description?: string
+    ogImage?: string
+    canonicalURL?: string
+}
+
+const {
+    title = 'Ajvad Laseen - Software Developer',
+    description = 'Portfolio of Ajvad Laseen — Software Developer',
+    ogImage = '/og-image.jpeg',
+    canonicalURL = Astro.site
+        ? new URL(Astro.url.pathname, Astro.site).href
+        : Astro.url.pathname,
+} = Astro.props
+
+const fullTitle =
+    title === 'Ajvad Laseen - Software Developer'
+        ? title
+        : `${title} | Ajvad Laseen`
+
+const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
 ---
 
 <!doctype html>
@@ -14,7 +37,6 @@ import Footer from '@/components/Footer.astro'
     <head>
         <meta charset='UTF-8' />
         <meta name='viewport' content='width=device-width' />
-
         <link
             rel='apple-touch-icon'
             sizes='180x180'
@@ -34,12 +56,18 @@ import Footer from '@/components/Footer.astro'
         />
         <link rel='manifest' href='/site.webmanifest' />
 
+        <!-- Primary Meta Tags -->
+        <title>{fullTitle}</title>
+        <meta name='description' content={description} />
         <meta name='generator' content={Astro.generator} />
-        <title>Ajvad Laseen - Software Developer</title>
-        <meta
-            name='description'
-            content='Portfolio of Ajvad Laseen — Software Developer'
-        />
+        <link rel='canonical' href={canonicalURL} />
+
+        <!-- Open Graph -->
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content={canonicalURL} />
+        <meta property='og:title' content={fullTitle} />
+        <meta property='og:description' content={description} />
+        <meta property='og:image' content={ogImageUrl} />
 
         <ClientRouter />
 
