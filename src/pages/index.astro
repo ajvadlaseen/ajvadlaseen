@@ -6,6 +6,19 @@ import '../styles/globals.css'
 import ReactLogo from '@/assets/logos/react.svg'
 import TSLogo from '@/assets/logos/typescript.svg'
 import NodeLogo from '@/assets/logos/node-js.svg'
+
+const experienceStartDate = new Date('2021-09-01')
+const now = new Date()
+
+let experienceYears = now.getFullYear() - experienceStartDate.getFullYear()
+const hasNotReachedAnniversaryThisYear =
+    now.getMonth() < experienceStartDate.getMonth() ||
+    (now.getMonth() === experienceStartDate.getMonth() &&
+        now.getDate() < experienceStartDate.getDate())
+
+if (hasNotReachedAnniversaryThisYear) {
+    experienceYears -= 1
+}
 ---
 
 <!-- <About /> -->
@@ -22,9 +35,9 @@ import NodeLogo from '@/assets/logos/node-js.svg'
                 <span class='font-medium'>Dubai 🇦🇪</span>.
             </p>
             <p class='leading-relaxed'>
-                For the past <strong>4+ years</strong>, I've been living in the
-                world of Full Stack Development where the main tools in my
-                arsenal were:
+                For the past <strong>{experienceYears}+ years</strong>, I've
+                been living in the world of Full Stack Development where the
+                main tools in my arsenal were:
             </p>
             <ul class='mt-3 space-y-2'>
                 <li class='flex items-center gap-2'>
